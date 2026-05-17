@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --text-normal: #212121;
+  --btn-primary: #0f3dc9;
+  --border-primary: #bdb6b6;
+  --modal-background: #0d0d0d;
+  --question-color: #bedbff;
+  --complete-status: #f7e99c;
+  --btn-back: #918e8e;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-text-primary: var(--text-normal);
+  --color-border: var(--border-primary);
+  --color-button-primary: var(--btn-primary);
+  --color-modal-color: var(--modal-background);
+  --color-question-primary: var(--question-color);
+  --color-complete-status: var(--complete-status);
+  --color-back-btn-primary: var(--btn-back);
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+body {
+  background: #ffffff;
+  color: var(--text-normal);
+  font-family: Arial, Helvetica, sans-serif;
+}
