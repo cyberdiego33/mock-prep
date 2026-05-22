@@ -1,149 +1,150 @@
+import { AttemptQuestion } from "@/lib/types/attemptsTypes";
 import QuestionComponent from "./QuestionComponent";
 
 interface Option {
   alpha: string;
-  to: string;
+  text: string;
 }
 
 export interface QuestionItem {
-  id: number;
+  questionId: number;
   questionNo: number;
   mark: number[];
-  question: string;
+  questionText: string;
   options: Option[];
 }
 
 export const QuestionsList: QuestionItem[] = [
   {
-    id: 1,
+    questionId: 1,
     questionNo: 1,
     mark: [1.0, 1.0],
-    question:
+    questionText:
       "Seyi, during a half-price sale, bought a book for the usual price and a second book for one-half the usual price. If she paid 90 kobo for the 2 books, what was the usual price for a book",
     options: [
       {
         alpha: "a",
-        to: "60k",
+        text: "60k",
       },
       {
         alpha: "b",
-        to: "60k",
+        text: "60k",
       },
       {
         alpha: "c",
-        to: "60k",
+        text: "60k",
       },
       {
         alpha: "d",
-        to: "60k",
+        text: "60k",
       },
       {
         alpha: "e",
-        to: "60k",
+        text: "60k",
       },
     ],
   },
   {
-    id: 2,
+    questionId: 2,
     questionNo: 2,
     mark: [1.0, 1.0],
-    question: "Car is to Engine as Rowboat is to ______.",
+    questionText: "Car is to Engine as Rowboat is to ______.",
     options: [
       {
         alpha: "a",
-        to: "Ocean",
+        text: "Ocean",
       },
       {
         alpha: "b",
-        to: "Wood",
+        text: "Wood",
       },
       {
         alpha: "c",
-        to: "Human",
+        text: "Human",
       },
       {
         alpha: "d",
-        to: "Sail",
+        text: "Sail",
       },
       {
         alpha: "e",
-        to: "Oar",
+        text: "Oar",
       },
     ],
   },
   {
-    id: 3,
+    questionId: 3,
     questionNo: 3,
     mark: [1.0, 1.0],
-    question: "What is the missing letter in this series? ...h g ? e d.",
+    questionText: "What is the missing letter in this series? ...h g ? e d.",
     options: [
       {
         alpha: "a",
-        to: "f",
+        text: "f",
       },
       {
         alpha: "b",
-        to: "c",
+        text: "c",
       },
       {
         alpha: "c",
-        to: "i",
+        text: "i",
       },
       {
         alpha: "d",
-        to: "b",
+        text: "b",
       },
       {
         alpha: "e",
-        to: "a",
+        text: "a",
       },
     ],
   },
   {
-    id: 4,
+    questionId: 4,
     questionNo: 4,
     mark: [1.0, 1.0],
-    question: "Who was the first President of Nigeria?",
+    questionText: "Who was the first President of Nigeria?",
     options: [
       {
         alpha: "a",
-        to: "Muhammadu Buhari",
+        text: "Muhammadu Buhari",
       },
       {
         alpha: "b",
-        to: "Nnamdi Azikiwe",
+        text: "Nnamdi Azikiwe",
       },
       {
         alpha: "c",
-        to: "Olusegun Obasanjo",
+        text: "Olusegun Obasanjo",
       },
       {
         alpha: "d",
-        to: "Yakubu Gowon",
+        text: "Yakubu Gowon",
       },
     ],
   },
   {
-    id: 5,
+    questionId: 5,
     questionNo: 5,
     mark: [1.0, 1.0],
-    question: "The Nigerian Constitution was first adopted in which year?",
+    questionText: "The Nigerian Constitution was first adopted in which year?",
     options: [
       {
         alpha: "a",
-        to: "1960",
+        text: "1960",
       },
       {
         alpha: "b",
-        to: "1979",
+        text: "1979",
       },
       {
         alpha: "c",
-        to: "1999",
+        text: "1999",
       },
       {
         alpha: "d",
-        to: "1954",
+        text: "1954",
       },
     ],
   },
@@ -151,140 +152,158 @@ export const QuestionsList: QuestionItem[] = [
 
 const QuestionsList2: QuestionItem[] = [
   {
-    id: 1,
+    questionId: 1,
     questionNo: 1,
     mark: [1.0, 1.0],
-    question:
+    questionText:
       "Each question consist of two words which have a certain relationship to each other followed by four pairs of related words, Select the pair which has the same relationship. CORPOREAL : SPIRITUAL",
     options: [
       {
         alpha: "a",
-        to: "mesa : plateau",
+        text: "mesa : plateau",
       },
       {
         alpha: "b",
-        to: "foreigner : immigrant",
+        text: "foreigner : immigrant",
       },
       {
         alpha: "c",
-        to: "pedagogue : teacher",
+        text: "pedagogue : teacher",
       },
       {
         alpha: "d",
-        to: "moron : savant",
+        text: "moron : savant",
       },
     ],
   },
   {
-    id: 2,
+    questionId: 2,
     questionNo: 2,
     mark: [1.0, 1.0],
-    question:
+    questionText:
       "An inter-agency task force has representatives from 3 different agencies. Half of the task force members represent agency A, one-third represent agency B and three represent agency C. How many people are on the task force?",
     options: [
       {
         alpha: "a",
-        to: "18",
+        text: "18",
       },
       {
         alpha: "b",
-        to: "15",
+        text: "15",
       },
       {
         alpha: "c",
-        to: "24",
+        text: "24",
       },
       {
         alpha: "d",
-        to: "30",
+        text: "30",
       },
       {
         alpha: "e",
-        to: "12",
+        text: "12",
       },
     ],
   },
   {
-    id: 3,
+    questionId: 3,
     questionNo: 3,
     mark: [1.0, 1.0],
-    question:
+    questionText:
       "Each question consist of two words which have a certain relationship to each other followed by four pairs of related words, Select the pair which has the same relationship. TEN : DECIMAL",
     options: [
       {
         alpha: "a",
-        to: "two : binary",
+        text: "two : binary",
       },
       {
         alpha: "b",
-        to: "four : quartet",
+        text: "four : quartet",
       },
       {
         alpha: "c",
-        to: "seven : septet",
+        text: "seven : septet",
       },
       {
         alpha: "d",
-        to: "five : quince",
+        text: "five : quince",
       },
     ],
   },
   {
-    id: 4,
+    questionId: 4,
     questionNo: 4,
     mark: [1.0, 1.0],
-    question:
+    questionText:
       "Who is responsible for the appointment of judges to the Federal High Court?",
     options: [
       {
         alpha: "a",
-        to: "Supreme Court",
+        text: "Supreme Court",
       },
       {
         alpha: "b",
-        to: "National Assembly",
+        text: "National Assembly",
       },
       {
         alpha: "c",
-        to: "President",
+        text: "President",
       },
       {
         alpha: "d",
-        to: "Governor",
+        text: "Governor",
       },
     ],
   },
   {
-    id: 5,
+    questionId: 5,
     questionNo: 5,
     mark: [1.0, 1.0],
-    question: "What is the maximum tenure of the President of Nigeria?",
+    questionText: "What is the maximum tenure of the President of Nigeria?",
     options: [
       {
         alpha: "a",
-        to: "8 years",
+        text: "8 years",
       },
       {
         alpha: "b",
-        to: "6 years",
+        text: "6 years",
       },
       {
         alpha: "c",
-        to: "5 years",
+        text: "5 years",
       },
       {
         alpha: "d",
-        to: "4 years",
+        text: "4 years",
       },
     ],
   },
 ];
 
-const QuestionInterface = function () {
+const selectedOption = [
+  { id: 1, questionNo: 1, optionpicked: "a" },
+  { id: 2, questionNo: 2, optionpicked: "b" },
+  { id: 3, questionNo: 3, optionpicked: "c" },
+  { id: 4, questionNo: 4, optionpicked: "b" },
+  { id: 5, questionNo: 5, optionpicked: "a" },
+];
+
+const QuestionInterface = function ({
+  questions,
+}: {
+  questions: AttemptQuestion[];
+}) {
   return (
     <ul className="space-y-5">
-      {QuestionsList.map((quest, i) => (
-        <QuestionComponent key={i} quest={quest} i={i} isDisabled={true} />
+      {questions.map((quest, i) => (
+        <QuestionComponent
+          key={i}
+          quest={quest}
+          i={i}
+          selectedOption={selectedOption[quest.questionId - 1].optionpicked}
+          isDisabled={true}
+        />
       ))}
     </ul>
   );

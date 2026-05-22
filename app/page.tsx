@@ -1,6 +1,6 @@
 import { PiTimerBold } from "react-icons/pi";
 import QuizAttemptList from "./components/QuizAttemptList";
-import ButtonModal from "./components/ButtonModal";
+import StartModal from "./components/StartModal";
 
 export default function Home() {
   return (
@@ -14,8 +14,8 @@ export default function Home() {
         </div>
 
         <div>
-          <div className="py-10">
-            <ButtonModal />
+          <div className="my-5">
+            <StartModal />
           </div>
 
           <div className="space-y-5">

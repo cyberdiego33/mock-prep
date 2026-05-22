@@ -1,12 +1,13 @@
 import Link from "next/link";
-import { AttemptItemType } from "./QuizAttemptList";
+import { DashboardAttemptType } from "@/lib/types/dashboardTypes";
+import AttemptModal from "./AttemptModal";
 
 const QuizAttemptInfo = function ({
   attemp,
   i,
   isHidden,
 }: {
-  attemp: AttemptItemType;
+  attemp: DashboardAttemptType;
   i: number;
   isHidden: boolean;
 }) {
@@ -56,12 +57,7 @@ const QuizAttemptInfo = function ({
         ) : (
           <div className="flex gap-3">
             {attemp.attempt === 0 ? (
-              <Link
-                href={`./attemptquiz/${attemp.id}`}
-                className="text-orange-500"
-              >
-                Attempt
-              </Link>
+              <AttemptModal text="Attempt" />
             ) : (
               <>
                 <Link
@@ -70,12 +66,7 @@ const QuizAttemptInfo = function ({
                 >
                   Review
                 </Link>
-                <Link
-                  href={`./attemptquiz/${attemp.id}`}
-                  className="text-orange-500"
-                >
-                  Re-attempt
-                </Link>
+                <AttemptModal text="Re-attempt" />
               </>
             )}
           </div>

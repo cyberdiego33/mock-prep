@@ -1,17 +1,8 @@
+import { getQuizAttempts } from "@/lib/services/getAPIs";
 import QuizAttemptInfo from "./QuizAttemptInfo";
+import { DashboardAttemptType } from "@/lib/types/dashboardTypes";
 
-export interface AttemptItemType {
-  id: number;
-  attempt: number;
-  status: string;
-  started: string;
-  completed: string;
-  duration: string;
-  mark: number[];
-  grade: number[];
-}
-
-export const Attempts: AttemptItemType[] = [
+export const Attempts: DashboardAttemptType[] = [
   {
     id: 1,
     // Answered quiz will carry the data of the users last attempt
@@ -56,10 +47,13 @@ export const Attempts: AttemptItemType[] = [
   },
 ];
 
-const QuizAttemptList = function () {
+const QuizAttemptList = async function () {
+  const AllQuizzesAttempts: DashboardAttemptType[] = await getQuizAttempts();
+
+  // console.log(AllQuizzesAttempts);
   return (
     <ul className="space-y-3">
-      {Attempts.map((attemp, i) => {
+      {AllQuizzesAttempts.map((attemp, i) => {
         return (
           <QuizAttemptInfo attemp={attemp} key={i} i={i} isHidden={false} />
         );

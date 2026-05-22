@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { QuestionsList } from "@/app/components/QuestionInterface";
+import { QuestionsList } from "@/app/components/QuestionInterface"; // Dummy data
 import QuestionComponent from "./QuestionComponent";
 import QuizBtn from "./QuizBtn";
 
@@ -35,9 +35,9 @@ const QuestionStepper = () => {
   // For your final "Submit" logic:
   const submitFunction = () => {
     const finalResults = QuestionsList.map((q) => ({
-      id: q.id,
+      id: q.questionId,
       questionNo: q.questionNo,
-      optionpicked: answers[q.id] || null,
+      optionpicked: answers[q.questionId] || null,
     }));
     console.log(finalResults);
   };
@@ -49,7 +49,7 @@ const QuestionStepper = () => {
           quest={currentQuestion}
           i={1}
           isDisabled={false}
-          selectedOption={answers[currentQuestion.id] || ""}
+          selectedOption={answers[currentQuestion.questionId] || ""}
           onAnswerChange={handleAnswerChange}
         />
       </ul>
@@ -59,9 +59,11 @@ const QuestionStepper = () => {
         ) : (
           <>
             <QuizBtn onClick={prevQuestion}>Previous Question</QuizBtn>
-            <QuizBtn onClick={isLastQuestion ? submitFunction : nextQuestion}>
-              {isLastQuestion ? "Finish quiz" : "Next Question"}
-            </QuizBtn>
+            {isLastQuestion ? (
+              <QuizBtn onClick={submitFunction}>Finish quiz</QuizBtn>
+            ) : (
+              <QuizBtn onClick={nextQuestion}>Next Question</QuizBtn>
+            )}
           </>
         )}
       </div>

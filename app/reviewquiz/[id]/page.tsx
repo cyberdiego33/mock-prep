@@ -3,6 +3,7 @@ import QuizAttemptInfo from "@/app/components/QuizAttemptInfo";
 import QuestionInterface from "@/app/components/QuestionInterface";
 import { Attempts } from "@/app/components/QuizAttemptList";
 import Button from "@/app/components/Button";
+import { getAttemptById } from "@/lib/actions/reviewAttemptsById";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -11,7 +12,11 @@ interface PageProps {
 const Page = async function ({ params }: PageProps) {
   const { id } = await params;
 
-  const attemp = Attempts[Number(id)];
+  const attemp = Attempts[Number(id)]; // This is dummy data
+
+  // console.log(id);
+  const { attempt, questions } = await getAttemptById(Number(id));
+  // console.log(JSON.stringify(questions));
 
   return (
     <>
@@ -25,11 +30,11 @@ const Page = async function ({ params }: PageProps) {
       </section>
 
       <ul>
-        <QuizAttemptInfo attemp={attemp} i={Number(id)} isHidden={true} />
+        <QuizAttemptInfo attemp={attempt} i={Number(id)} isHidden={true} />
       </ul>
 
       <section>
-        <QuestionInterface />
+        <QuestionInterface questions={questions} />
       </section>
 
       <div>
